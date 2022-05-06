@@ -127,10 +127,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 loadingProgressBar.setVisibility(View.VISIBLE);
-                //Toast.makeText(getApplicationContext(), usernameEditText.getText().toString(), Toast.LENGTH_SHORT).show();
                 if(usernameEditText.getText().toString().equals("admin"))
                 {
-                    //Toast.makeText(getApplicationContext(), "Admin tab display", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
                     startActivity(intent);
 
@@ -145,7 +143,6 @@ public class LoginActivity extends AppCompatActivity {
     private void updateUiWithUser(LoggedInUserView model) {
         String welcome = getString(R.string.welcome) + model.getDisplayName();
         // TODO : initiate successful logged in experience
-        //Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
         if(getIntent().getStringExtra("flag").equals("0")){
             Intent i = new Intent(this, ViewEventsActivity.class);
             Toast.makeText(this, "You have successfully registered for this event", Toast.LENGTH_SHORT).show();

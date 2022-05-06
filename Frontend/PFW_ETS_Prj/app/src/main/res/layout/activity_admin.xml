@@ -10,44 +10,43 @@
         android:id="@+id/txtEventDate"
         android:layout_width="210dp"
         android:layout_height="48dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEventName" />
+        app:layout_constraintBottom_toTopOf="@+id/txtEventTime"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/txtEventTime"
         android:layout_width="217dp"
         android:layout_height="48dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEventDate" />
+        app:layout_constraintBottom_toTopOf="@+id/txtVenue"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/txtVenue"
         android:layout_width="218dp"
         android:layout_height="48dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="124dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/btnAddEvent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEventTime"
-        app:layout_constraintVertical_bias="0.527" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnAddEvent"
         android:layout_width="173dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="84dp"
         android:backgroundTint="#CC8D6F3E"
         android:fontFamily="@font/unitedsansheavy"
         android:onClick="RegisterEvent"
@@ -55,8 +54,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/regswitch"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView"
@@ -74,13 +75,13 @@
         android:id="@+id/textView4"
         android:layout_width="99dp"
         android:layout_height="28dp"
+        android:layout_marginStart="44dp"
         android:layout_marginBottom="44dp"
         android:text="Event Name:"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
-        app:layout_constraintEnd_toStartOf="@+id/txtEventName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.962"
+        app:layout_constraintVertical_bias="0.797"
         tools:text="Event Name:" />
 
     <TextView
@@ -102,27 +103,42 @@
         android:text="Event Time:"
         app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintEnd_toStartOf="@+id/txtEventTime"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="99dp"
         android:layout_height="28dp"
-        android:layout_marginBottom="284dp"
+        android:layout_marginBottom="60dp"
         android:text="Venue:"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/regswitch"
         app:layout_constraintEnd_toStartOf="@+id/txtVenue"
+        app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/txtEventName"
         android:layout_width="215dp"
         android:layout_height="47dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="36dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtEventDate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toEndOf="@+id/textView4" />
+
+    <Switch
+        android:id="@+id/regswitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="196dp"
+        android:text="Registeration?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

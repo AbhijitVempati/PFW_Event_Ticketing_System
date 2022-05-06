@@ -77,7 +77,6 @@ public class EventDetailsActivity extends AppCompatActivity {
         try {
             JSONObject params = new JSONObject();
             try {
-                //input your API parameters
                 params.put("student_id", 10);
                 params.put("event_id", 10);
                 params.put("event_name", id);
@@ -94,7 +93,6 @@ public class EventDetailsActivity extends AppCompatActivity {
                     new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
-                            // Display the first 500 characters of the response string.
                             System.out.println("Response: " + response);
 
                         }
@@ -104,44 +102,6 @@ public class EventDetailsActivity extends AppCompatActivity {
                     System.out.println("Response: " + error.toString());
                 }
             });
-            /*
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                    new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            // Display the first 500 characters of the response string.
-                            System.out.println("Response: " + response);
-
-                        }
-                    }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    System.out.println("Response: " + error.toString());
-                }
-            }){
-                @Override
-                protected Map<String, String> getParams() {
-                    Map<String, String> params = new HashMap<String, String>();
-                    params.put("student_id", "10");
-                    params.put("event_id", "10");
-                    params.put("event_name", id);
-                    params.put("event_date", date);
-                    params.put("event_time", time);
-                    params.put("student_first", venue);
-                    params.put("student_last", "Vem");
-                    params.put("student_email", "vempa01@pfw.edu");
-
-                    return params;
-                }
-                @Override
-                public Map<String, String> getHeaders() throws AuthFailureError {
-                    Map<String, String> params = new HashMap<String, String>();
-                    params.put("Content-Type", "application/json");
-                    return params;
-                }
-            };
-
-             */
 
             jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(500000,
                     DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
@@ -151,6 +111,5 @@ public class EventDetailsActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        //Toast.makeText(this, "You have successfully registered for this event", Toast.LENGTH_SHORT).show();
     }
 }

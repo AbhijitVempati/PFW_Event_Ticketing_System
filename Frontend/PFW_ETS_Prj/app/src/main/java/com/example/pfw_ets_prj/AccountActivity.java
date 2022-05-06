@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -43,7 +44,6 @@ public class AccountActivity extends AppCompatActivity {
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-                            // Display the first 500 characters of the response string.
                             System.out.println("Response: " + response);
                             JSONArray json = null;
                             try {
@@ -63,7 +63,6 @@ public class AccountActivity extends AppCompatActivity {
                                     event= new Event(title, LocalDate.now(), "2:00 P.M.", "Classic Ballroom","1");
                                     dailyEvents2.add(event);
                                     }
-                                    //event= new Event("NCAA Workshops", LocalDate.now(), "2:00 P.M.", "Classic Ballroom","1");
                                     ListView bookedevents = findViewById(R.id.lViewBooked);
                                     EventAdapter eventAdapter2 = new EventAdapter(getApplicationContext(), dailyEvents2);
                                     bookedevents.setAdapter(eventAdapter2);
@@ -88,18 +87,17 @@ public class AccountActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        //sa
-
-
-        //Event events1 = new Event("NCAA Workshops", LocalDate.now(), "2:00 P.M.", "Classic Ballroom","1");
-        //Event events2 = new Event("Honors Banquet", LocalDate.now(), "7:00 P.M.", "International Ballroom","1");
-
-
-        //ListView bookedevents = findViewById(R.id.lViewBooked);
-        //ArrayList<Event> dailyEvents2 = new ArrayList<>(Arrays.asList(events1, events2));
-        //EventAdapter eventAdapter2 = new EventAdapter(getApplicationContext(), dailyEvents2);
-        //bookedevents.setAdapter(eventAdapter2);
-
-
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if(keyCode == KeyEvent.KEYCODE_BACK)
+        {
+            Intent i = new Intent(this, MainActivity.class);
+            i.putExtra("flag","1");
+            startActivity(i);
+            return true;
+        }
+        return false;
     }
 }
