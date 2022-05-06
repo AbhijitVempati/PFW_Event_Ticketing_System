@@ -40,8 +40,8 @@ public class JavaMailUtil {
 		//
 		properties.put("mail.smtp.port", "587");
 		
-		String myAccount = "*********";
-		String password = "*********";
+		String myAccount = "abhijitv16@gmail.com";
+		String password = "rogeR@123$";
 		
 		Session session = Session.getDefaultInstance(properties, new Authenticator() {
 			@Override
@@ -68,7 +68,7 @@ public class JavaMailUtil {
 			 MimeMultipart multipart = new MimeMultipart("related");
 			 BodyPart messageBodyPart = new MimeBodyPart();
 			 String htmlText = "<div><div style=\"width:60%;display:inline-block;vertical-align:middle;\"><br/><p>Hi "+ theRegistration.getStudent_last()+",</p><br/><div> <p>This is to confirm that You have sucessfully registerd to "+theRegistration.getEvent_name()+"</p><p>Please attend the " +theRegistration.getStudent_first()+" venue on ";
-			 htmlText+=theRegistration.getEvent_date()+".</p><br/><br/> Regards,<br/>PFW Admin.</div></div><div style=\"width:40%;display:inline-block;vertical-align:middle;\"><img src=\"cid:image\"></div></div>";
+			 htmlText+="05-05-2022 .</p><br/><br/> Regards,<br/>PFW Admin.</div></div><div style=\"width:40%;display:inline-block;vertical-align:middle;\"><img src=\"cid:image\"></div></div>";
 	        messageBodyPart.setContent(htmlText, "text/html");
 
 	        // add it
@@ -77,7 +77,7 @@ public class JavaMailUtil {
 	        // second part (the image)
 	        messageBodyPart = new MimeBodyPart();
 	        DataSource fds = new FileDataSource
-	          ("D:/backend/PFW_Event_Ticketing_System/src/main/resources/Images/images1.jfif");
+	          ("D:/backup-se-backend/PFW_Event_Ticketing_System/src/main/resources/Images/images1.jfif");
 	        messageBodyPart.setDataHandler(new DataHandler(fds));
 	        messageBodyPart.setHeader("Content-ID","<image>");
 

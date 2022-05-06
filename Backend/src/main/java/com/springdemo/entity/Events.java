@@ -30,7 +30,7 @@ public class Events {
 	private boolean event_reg;
 	
 
-	public boolean isEvent_reg() {
+	public boolean getEvent_reg() {
 		return event_reg;
 	}
 

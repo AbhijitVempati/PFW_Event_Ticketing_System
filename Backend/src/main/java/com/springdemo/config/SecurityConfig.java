@@ -43,7 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 		// secures all REST endpoints under "/api/customers"
 		http.authorizeRequests()		
-		.antMatchers("/api/saveEvent").hasRole("ADMIN")		
+		.antMatchers("/api/saveEvent1").hasRole("ADMIN")		
 		.and()
 		.httpBasic()
 		.and()
